@@ -9,16 +9,12 @@ from sklearn.preprocessing import StandardScaler
 import gradio as gr
 
 # Constants for directories and file names
-DIR = 'C:\\Users\\Afshin\\Desktop\\10_Projects\\Project_4_Fraud_Detection_Etherium\\'
-MODEL_DIR = os.path.join(DIR, 'models')
-DATA_DIR = os.path.join(DIR, 'datasets')
+MODEL_DIR = 'models'
+DATA_DIR = 'datasets'
 DATA_FILE = 'cleaned_transaction_dataset.csv'
 MODEL_NAMES = [
-    'Ada Boost Classifier',
-    'Extra Trees Classifier',
-    'Gradient Boosting Classifier',
     'LGBM Classifier', 
-    'Random Forest Classifier',
+    'CatBoost Classifier',
     'XGBoost Classifier', 
 ]
 
@@ -118,22 +114,22 @@ def predict(avg_min_sent, avg_min_received, time_diff, sent_tnx, received_tnx, n
 
 # Gradio inputs based on the features you have
 inputs = [
-    gr.Number(label="Avg min between sent tnx", default=df["Avg min between sent tnx"].mean()),
-    gr.Number(label="Avg min between received tnx", default=df["Avg min between received tnx"].mean()),
-    gr.Number(label="Time difference between first and last (mins)", default=df["Time difference between first and last (mins)"].mean()),
-    gr.Number(label="Sent tnx", default=df["Sent tnx"].mean()),
-    gr.Number(label="Received tnx", default=df["Received tnx"].mean()),
-    gr.Number(label="Number of created contracts", default=int(df["Number of created contracts"].mean())),
-    gr.Number(label="Max value received", default=df["Max value received"].mean()),
-    gr.Number(label="Avg value received", default=df["Avg value received"].mean()),
-    gr.Number(label="Avg value sent", default=df["Avg value sent"].mean()),
-    gr.Number(label="Total either sent", default=df["Total either sent"].mean()),
-    gr.Number(label="Total either balance", default=df["Total either balance"].mean()),
-    gr.Number(label="ERC20 total either received", default=df["ERC20 total either received"].mean()),
-    gr.Number(label="ERC20 total either sent", default=df["ERC20 total either sent"].mean()),
-    gr.Number(label="ERC20 total either sent contract", default=df["ERC20 total either sent contract"].mean()),
-    gr.Number(label="ERC20 unique sent address", default=df["ERC20 unique sent address"].mean()),
-    gr.Number(label="ERC20 unique received token name", default=df["ERC20 unique received token name"].mean()),
+    gr.Number(label="Avg min between sent tnx", value=df["Avg min between sent tnx"].mean()),
+    gr.Number(label="Avg min between received tnx", value=df["Avg min between received tnx"].mean()),
+    gr.Number(label="Time difference between first and last (mins)", value=df["Time difference between first and last (mins)"].mean()),
+    gr.Number(label="Sent tnx", value=df["Sent tnx"].mean()),
+    gr.Number(label="Received tnx", value=df["Received tnx"].mean()),
+    gr.Number(label="Number of created contracts", value=int(df["Number of created contracts"].mean())),
+    gr.Number(label="Max value received", value=df["Max value received"].mean()),
+    gr.Number(label="Avg value received", value=df["Avg value received"].mean()),
+    gr.Number(label="Avg value sent", value=df["Avg value sent"].mean()),
+    gr.Number(label="Total either sent", value=df["Total either sent"].mean()),
+    gr.Number(label="Total either balance", value=df["Total either balance"].mean()),
+    gr.Number(label="ERC20 total either received", value=df["ERC20 total either received"].mean()),
+    gr.Number(label="ERC20 total either sent", value=df["ERC20 total either sent"].mean()),
+    gr.Number(label="ERC20 total either sent contract", value=df["ERC20 total either sent contract"].mean()),
+    gr.Number(label="ERC20 unique sent address", value=df["ERC20 unique sent address"].mean()),
+    gr.Number(label="ERC20 unique received token name", value=df["ERC20 unique received token name"].mean()),
 ]
 
 output = gr.Dataframe(label="Prediction Results")
