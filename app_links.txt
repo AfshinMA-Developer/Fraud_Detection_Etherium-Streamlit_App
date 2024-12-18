@@ -1,0 +1,7 @@
+Github:
+https://github.com/AfshinMA-Developer/Churn_Prediction-Streamlit_App.git
+Huggingface:
+https://huggingface.co/spaces/AfshinMA/Fraud_Detection_Etherium-Gradio_App
+https://huggingface.co/spaces/AfshinMA/Fraud_Detection_Etherium-Streamlit_App
+Streamlit:
+https://churnprediction-appappgit-3f79yacqmtvz2r3lcsd5rw.streamlit.app/
