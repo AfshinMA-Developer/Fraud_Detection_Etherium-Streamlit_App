@@ -14,7 +14,6 @@ DATA_DIR = 'datasets'
 DATA_FILE = 'cleaned_transaction_dataset.csv'
 MODEL_NAMES = [
     'LGBM Classifier', 
-    'CatBoost Classifier',
     'XGBoost Classifier', 
 ]
 
