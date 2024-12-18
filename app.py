@@ -39,7 +39,7 @@ models = load_models(MODEL_NAMES)
 # Prepare features and target
 X = df.drop(columns=['FLAG'])
 y = df['FLAG']
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1, random_state=123)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=123)
 
 # Prediction and metrics evaluation function
 def calculate_metrics(y_true, y_pred, average_type='binary'):
@@ -55,7 +55,7 @@ def load_and_predict(sample):
         # Using StandardScaler to scale numric features
         scaler = StandardScaler()
         X_train_scaled = scaler.fit_transform(X_train)
-        sample_trans = scaler.fit_transform(sample)
+        sample_trans = scaler.transform(sample)
 
         # Using SMOTE to handle class imbalance
         X_resampled, y_resampled = SMOTE(random_state=123).fit_resample(X_train_scaled, y_train)
