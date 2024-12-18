@@ -9,16 +9,12 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
 # Constants for directories and file names
-DIR = 'C:\\Users\\Afshin\\Desktop\\10_Projects\\Project_4_Fraud_Detection_Etherium\\'
-MODEL_DIR = os.path.join(DIR, 'models')
-DATA_DIR = os.path.join(DIR, 'datasets')
+MODEL_DIR = 'models'
+DATA_DIR = 'datasets'
 DATA_FILE = 'cleaned_transaction_dataset.csv'
 MODEL_NAMES = [
-    'Ada Boost Classifier',
-    'Extra Trees Classifier',
-    'Gradient Boosting Classifier',
     'LGBM Classifier', 
-    'Random Forest Classifier',
+    'CatBoost Classifier',
     'XGBoost Classifier', 
 ]
 
@@ -132,16 +128,13 @@ st.markdown("---")
 st.subheader("Description")
 st.markdown('''This Streamlit application predicts fraud in Ethereum transactions using multiple machine learning models including LGBM, XGBoost, and Gradient Boosting classifiers. 
 Users can input transaction information through a user-friendly interface, which includes various fields related to transaction metrics and user activity.
-
 > **Features:**
 > - **Input Components:** Users can provide data using number inputs for transaction-related features.
 > - **Data Processing:** Upon submitting the form, the app processes the input data and transforms it using a pre-trained data preprocessor. 
 > - It leverages SMOTE to address any class imbalance in the data.
 > - **Prediction:** The app runs predictions using the loaded models and calculates performance metrics like accuracy, recall, F1 score, and precision.
 > - **Results Display:** The predicted fraud status and model performance metrics are displayed in a formatted output for easy interpretation.
-
 > **Usage:** Just fill out the information about the transaction and click "Predict Fraud" to receive insights on whether the transaction is likely to be fraudulent and how well each model performed.
-
 > **Disclaimer:** This application is intended for educational purposes only.
 ''')
 
