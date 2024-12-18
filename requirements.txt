@@ -2,7 +2,6 @@ pandas
 numpy
 joblib
 imbalanced-learn
-streamlit
 scikit-learn
 lightgbm 
 xgboost
