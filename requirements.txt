@@ -1,8 +1,9 @@
 pandas
 numpy
 joblib
-scikit-learn
 imbalanced-learn
+streamlit
+scikit-learn
 lightgbm 
 xgboost
 catboost
