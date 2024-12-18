@@ -9,17 +9,15 @@ from sklearn.preprocessing import StandardScaler
 import gradio as gr
 
 # Constants for directories and file names
-DIR = 'C:\\Users\\Afshin\\Desktop\\10_Projects\\Project_4_Fraud_Detection_Etherium\\'
-MODEL_DIR = os.path.join(DIR, 'models')
-DATA_DIR = os.path.join(DIR, 'datasets')
+MODEL_DIR = 'models'
+DATA_DIR = 'datasets'
 DATA_FILE = 'cleaned_transaction_dataset.csv'
 MODEL_NAMES = [
-    'Ada Boost Classifier',
-    'Extra Trees Classifier',
-    'Gradient Boosting Classifier',
     'LGBM Classifier', 
-    'Random Forest Classifier',
+    'CatBoost Classifier',
     'XGBoost Classifier', 
+    'AdaBoost Classifier',
+    'Gradient Boosting Classifier',
 ]
 
 # Load dataset
